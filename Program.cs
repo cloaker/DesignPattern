@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DesignPattern.Strategy;
 using DesignPattern.NullObject;
+using DesignPattern.Singleton;
 
 namespace DesignPattern
 {
@@ -28,6 +29,7 @@ namespace DesignPattern
                         CallNullObjectPattern();
                         break;
                     case "3":
+                        CallSingletonPattern();
                         break;
                     case "4":
                         break;
@@ -108,6 +110,19 @@ namespace DesignPattern
             myCharacter.SetWeapon(weapon);
             myCharacter.Attack();
            
+        }
+
+        public static void CallSingletonPattern()
+        {
+
+            var myFirstInstance   = Singleton.Singleton.GetInstance();
+       
+            //check to make sure only one instance is created. 
+            var mySecondInstanceTry = Singleton.Singleton.GetInstance();
+
+            //check to make sure only one instance is created. 
+            var myThirdInstanceTry = Singleton.Singleton.GetInstance();
+
         }
     }
 }

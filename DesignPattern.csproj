@@ -46,6 +46,7 @@
     <Compile Include="NullObject\Null.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Singleton\Singleton.cs" />
     <Compile Include="Strategy\Axe.cs" />
     <Compile Include="Strategy\Character.cs" />
     <Compile Include="Strategy\Club.cs" />
@@ -57,7 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Observer\" />
-    <Folder Include="Singleton\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
