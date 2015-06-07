@@ -44,6 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NullObject\Null.cs" />
+    <Compile Include="Observer\Publisher\IPublisher.cs" />
+    <Compile Include="Observer\Publisher\TwitterChannel.cs" />
+    <Compile Include="Observer\Publisher\YouTubeChannel.cs" />
+    <Compile Include="Observer\Subscriber\ISubscriber.cs" />
+    <Compile Include="Observer\Subscriber\Moderator.cs" />
+    <Compile Include="Observer\Subscriber\PremiumSubscriber.cs" />
+    <Compile Include="Observer\Subscriber\RegularSubscriber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Singleton\Singleton.cs" />
@@ -56,9 +63,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Observer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
