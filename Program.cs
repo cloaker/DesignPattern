@@ -7,6 +7,8 @@ using DesignPattern.Strategy;
 using DesignPattern.NullObject;
 using DesignPattern.Observer.Subscriber;
 using DesignPattern.Observer.Publisher;
+using DesignPattern.Iterator.Iterator;
+using DesignPattern.Iterator.Aggregate;
 
 namespace DesignPattern
 {
@@ -36,6 +38,7 @@ namespace DesignPattern
                         CallObserverPattern();
                         break;
                     case "5":
+                        CallIteratorPattern();
                         break;
                     default:
                         break;
@@ -216,10 +219,30 @@ namespace DesignPattern
 
         }
 
-
-        public static void Call()
+        public static void CallIteratorPattern()
         {
+            ISocialNetworking facebook = new Facebook();
+            ISocialNetworking twitter = new Twitter();
 
+            IIterator facebookIterator = facebook.CreateIterator();
+            IIterator twitterIterator = twitter.CreateIterator();
+
+            Console.WriteLine("Facebook: ");
+            PrintUsers(facebookIterator);
+
+            Console.WriteLine("Twitter: ");
+            PrintUsers(twitterIterator);
+
+            Console.ReadKey();
+
+        }
+
+        public static void PrintUsers(IIterator iterate)
+        {
+            while(!iterate.IsDone())
+            {
+                Console.WriteLine(iterate.Next());
+            }
         }
     }
 }

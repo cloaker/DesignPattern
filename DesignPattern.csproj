@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Iterator\Aggregate\Facebook.cs" />
+    <Compile Include="Iterator\Aggregate\ISocialNetworking.cs" />
+    <Compile Include="Iterator\Aggregate\Twitter.cs" />
+    <Compile Include="Iterator\Iterator\FaceBookIterator.cs" />
+    <Compile Include="Iterator\Iterator\IIterator.cs" />
+    <Compile Include="Iterator\Iterator\TwitterIterator.cs" />
     <Compile Include="NullObject\Null.cs" />
     <Compile Include="Observer\Publisher\IPublisher.cs" />
     <Compile Include="Observer\Publisher\TwitterChannel.cs" />
@@ -63,9 +69,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Iterator\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
