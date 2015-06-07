@@ -135,12 +135,9 @@ namespace DesignPattern
             //subscriber list 
             ISubscriber prem1 = new PremiumSubscriber();
             ISubscriber prem2 = new PremiumSubscriber();
-            ISubscriber prem3 = new PremiumSubscriber();
-            ISubscriber prem4 = new PremiumSubscriber();
+            ISubscriber prem3 = new PremiumSubscriber();            
             ISubscriber reg1 = new RegularSubscriber();
             ISubscriber reg2 = new RegularSubscriber();
-            ISubscriber reg3 = new RegularSubscriber();
-            ISubscriber reg4 = new RegularSubscriber();
             ISubscriber mod1 = new Moderator();
             ISubscriber mod2 = new Moderator();
 
@@ -148,51 +145,80 @@ namespace DesignPattern
             myYouTubeChannel.registerSubscriber(prem1);
             myYouTubeChannel.registerSubscriber(prem2);
             myYouTubeChannel.registerSubscriber(prem3);
-            myYouTubeChannel.registerSubscriber(prem4);
             myYouTubeChannel.registerSubscriber(reg1);
             myYouTubeChannel.registerSubscriber(reg2);
-            myYouTubeChannel.registerSubscriber(reg3);
-            myYouTubeChannel.registerSubscriber(reg4);
             myYouTubeChannel.registerSubscriber(mod1);
             myYouTubeChannel.registerSubscriber(mod2);
-
             //register subscribers  YouTube Channel
             myTwitterChannel.registerSubscriber(prem1);
-            myTwitterChannel.registerSubscriber(prem2);
-            myTwitterChannel.registerSubscriber(prem3);
-            myTwitterChannel.registerSubscriber(prem4);
             myTwitterChannel.registerSubscriber(reg1);
             myTwitterChannel.registerSubscriber(reg2);
-            myTwitterChannel.registerSubscriber(reg3);
-            myTwitterChannel.registerSubscriber(reg4);
             myTwitterChannel.registerSubscriber(mod1);
-            myTwitterChannel.registerSubscriber(mod2);
 
-            //notify subscribers
-            myTwitterChannel.notifySubscribers();
+            Console.WriteLine("----------------------------------- registered youtube");
+            Console.WriteLine("prem1 registered for youtube channel");
+            Console.WriteLine("prem2 registered for youtube channel");
+            Console.WriteLine("prem3 registered for youtube channel");
+            Console.WriteLine("reg1 registered for youtube channel");
+            Console.WriteLine("reg2 registered for youtube channel");
+            Console.WriteLine("mod1 registered for youtube channel");
+            Console.WriteLine("mod2 registered for youtube channel");
+
+            Console.WriteLine("----------------------------------- notify subscribers - youtube");
             myYouTubeChannel.notifySubscribers();
 
+            Console.WriteLine("----------------------------------- registered twitter");
+            Console.WriteLine("prem1 registered for twitter channel");
+            Console.WriteLine("reg1 registered for twitter channel");
+            Console.WriteLine("reg2 registered for twitter channel");
+            Console.WriteLine("mod1 registered for twitter channel");
+
+            //notify subscribers
+            Console.WriteLine("----------------------------------- notify subscribers - twitter");
+            myTwitterChannel.notifySubscribers();
+
             //pause
+            Console.WriteLine("-------------------------------");
+            Console.WriteLine("Click button to continue");
             Console.ReadKey();
 
             //unregister some of the subscribers  YouTube Channel
             myYouTubeChannel.unregisterSubscriber(prem1);
             myYouTubeChannel.unregisterSubscriber(prem3);
-            myYouTubeChannel.unregisterSubscriber(reg1);
-            myYouTubeChannel.unregisterSubscriber(reg3);
-            myYouTubeChannel.unregisterSubscriber(mod1);
-            myTwitterChannel.unregisterSubscriber(prem1);
-            myTwitterChannel.unregisterSubscriber(prem3);
-            myTwitterChannel.unregisterSubscriber(reg1);
-            myTwitterChannel.unregisterSubscriber(reg3);
-            myTwitterChannel.unregisterSubscriber(mod1);
+            myYouTubeChannel.unregisterSubscriber(reg2);
+            myYouTubeChannel.unregisterSubscriber(mod2);
+            Console.WriteLine("----------------------------------- unregistered youtube");
+            Console.WriteLine("prem1 unregistered for youtube channel");
+            Console.WriteLine("prem3 unregistered for youtube channel");
+            Console.WriteLine("reg2 unregistered for youtube channel");
+            Console.WriteLine("mod2 unregistered for youtube channel");
 
-            //notify subscribers
-            myTwitterChannel.notifySubscribers();
+            Console.WriteLine("----------------------------------- notify subscribers - youtube");
             myYouTubeChannel.notifySubscribers();
 
-            //pause
-            Console.ReadKey();
+            Console.WriteLine("-----------------------------------");
+
+            myTwitterChannel.unregisterSubscriber(prem1);
+            myTwitterChannel.unregisterSubscriber(prem2);
+            myTwitterChannel.unregisterSubscriber(reg1);
+            myTwitterChannel.unregisterSubscriber(mod1);
+            Console.WriteLine("----------------------------------- unregistered twitter");
+            Console.WriteLine("prem1 unregistered for twitter channel");
+            Console.WriteLine("prem2 unregistered for twitter channel");
+            Console.WriteLine("reg1 unregistered for twitter channel");
+            Console.WriteLine("mod1 unregistered for twitter channel");
+
+            //notify subscribers
+            Console.WriteLine("----------------------------------- notify subscribers - twitter");
+            myTwitterChannel.notifySubscribers();
+
+            Console.WriteLine("-----------------------------------");
+
+        }
+
+
+        public static void Call()
+        {
 
         }
     }
