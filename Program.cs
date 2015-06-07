@@ -17,6 +17,7 @@ namespace DesignPattern
 {
     public class Program
     {
+        #region Main Program        
         public static void Main(string[] args)
         {
 
@@ -61,9 +62,10 @@ namespace DesignPattern
                     break;
                 }
             }
-      
         }
+        #endregion
 
+        #region Strategy Pattern
         public static void CallStrategyPattern()
         {
             //--------------------------------------------------------------------------------------------------
@@ -92,7 +94,9 @@ namespace DesignPattern
             myCharacter.Attack();
           
         }
+        #endregion
 
+        #region Null Object Pattern
         public static void CallNullObjectPattern()
         {
             //--------------------------------------------------------------------------------------------------
@@ -127,7 +131,9 @@ namespace DesignPattern
             myCharacter.Attack();
            
         }
+        #endregion
 
+        #region SingletonPattern
         public static void CallSingletonPattern()
         {
 
@@ -140,7 +146,9 @@ namespace DesignPattern
             var myThirdInstanceTry = Singleton.Singleton.GetInstance();
 
         }
+        #endregion
 
+        #region Observer Pattern        
         public static void CallObserverPattern()
         {
             var myYouTubeChannel = new YouTubeChannel();
@@ -229,6 +237,7 @@ namespace DesignPattern
             Console.WriteLine("-----------------------------------");
 
         }
+        #endregion
 
         #region Iterator Pattern
         public static void CallIteratorPattern()
@@ -258,6 +267,7 @@ namespace DesignPattern
         }
         #endregion
 
+        #region Decorator Pattern
         public static void CallDecoratorPattern()
         {
             IceCream iceCreamChocolate = new Chocolate();
@@ -280,6 +290,8 @@ namespace DesignPattern
             Console.ReadKey();
 
         }
+        #endregion
+
     }                                                
 }
 
