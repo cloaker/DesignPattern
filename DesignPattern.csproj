@@ -43,6 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Decorator\Component\IceCream.cs" />
+    <Compile Include="Decorator\ConcreteComponent\Chocolate.cs" />
+    <Compile Include="Decorator\ConcreteComponent\Vanilla.cs" />
+    <Compile Include="Decorator\ConcreteDecorator\Caramel.cs" />
+    <Compile Include="Decorator\ConcreteDecorator\Fudge.cs" />
+    <Compile Include="Decorator\ConcreteDecorator\Sprinkle.cs" />
+    <Compile Include="Decorator\ConcreteDecorator\WaffleCone.cs" />
+    <Compile Include="Decorator\ConcreteDecorator\WhipCream.cs" />
+    <Compile Include="Decorator\Decorator\Topping.cs" />
     <Compile Include="Iterator\Aggregate\Facebook.cs" />
     <Compile Include="Iterator\Aggregate\ISocialNetworking.cs" />
     <Compile Include="Iterator\Aggregate\Twitter.cs" />

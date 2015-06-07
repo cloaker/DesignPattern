@@ -9,6 +9,9 @@ using DesignPattern.Observer.Subscriber;
 using DesignPattern.Observer.Publisher;
 using DesignPattern.Iterator.Iterator;
 using DesignPattern.Iterator.Aggregate;
+using DesignPattern.Decorator.Component;
+using DesignPattern.Decorator.ConcreteComponent;
+using DesignPattern.Decorator.ConcreteDecorator;
 
 namespace DesignPattern
 {
@@ -19,8 +22,13 @@ namespace DesignPattern
 
             while (true)
             {
-                Console.WriteLine("Choose a design pattern. 1 = Strategy, 2=Null Object, 3= Singleton, 4=Observer, 5=Iterator");
+                Console.WriteLine("");
+                Console.WriteLine("-------------------------------------------------------------------------------");
+                Console.WriteLine("Choose a Design Pattern -->");
+                Console.WriteLine("1 = Strategy, 2=Null Object, 3= Singleton, 4=Observer, 5=Iterator, 6=Decorator");
+                Console.WriteLine("");
                 Console.WriteLine("type 'exit' and hit enter to stop");
+                Console.WriteLine("-------------------------------------------------------------------------------");
                 String chosenPattern = Console.ReadLine();
 
                 switch (chosenPattern)
@@ -39,6 +47,9 @@ namespace DesignPattern
                         break;
                     case "5":
                         CallIteratorPattern();
+                        break;
+                    case "6":
+                        CallDecoratorPattern();
                         break;
                     default:
                         break;
@@ -219,6 +230,7 @@ namespace DesignPattern
 
         }
 
+        #region Iterator Pattern
         public static void CallIteratorPattern()
         {
             ISocialNetworking facebook = new Facebook();
@@ -244,6 +256,30 @@ namespace DesignPattern
                 Console.WriteLine(iterate.Next());
             }
         }
-    }
+        #endregion
+
+        public static void CallDecoratorPattern()
+        {
+            IceCream iceCreamChocolate = new Chocolate();
+
+            iceCreamChocolate = new Sprinkle(iceCreamChocolate);
+            iceCreamChocolate = new Fudge(iceCreamChocolate);
+
+            Console.WriteLine("Chocolate Ice Cream with Sprinkles, Fudge = " + iceCreamChocolate.Cost().ToString("C"));
+
+            IceCream iceCreamVanilla = new Vanilla();
+
+            iceCreamVanilla = new Sprinkle(iceCreamVanilla);
+            iceCreamVanilla = new Fudge(iceCreamVanilla);
+            iceCreamVanilla = new Caramel(iceCreamVanilla);
+            iceCreamVanilla = new WhipCream(iceCreamVanilla);
+            iceCreamVanilla = new WaffleCone(iceCreamVanilla);
+
+            Console.WriteLine("Vanilla Ice Cream with Sprinkles, Fudge, Caramel, WhipCream, WaffleCone = " + iceCreamVanilla.Cost().ToString("C"));
+
+            Console.ReadKey();
+
+        }
+    }                                                
 }
 
