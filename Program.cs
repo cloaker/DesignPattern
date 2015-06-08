@@ -12,6 +12,8 @@ using DesignPattern.Iterator.Aggregate;
 using DesignPattern.Decorator.Component;
 using DesignPattern.Decorator.ConcreteComponent;
 using DesignPattern.Decorator.ConcreteDecorator;
+using DesignPattern.Facade.Concrete;
+using DesignPattern.Facade.Facade;
 
 namespace DesignPattern
 {
@@ -26,7 +28,7 @@ namespace DesignPattern
                 Console.WriteLine("");
                 Console.WriteLine("-------------------------------------------------------------------------------");
                 Console.WriteLine("Choose a Design Pattern -->");
-                Console.WriteLine("1 = Strategy, 2=Null Object, 3= Singleton, 4=Observer, 5=Iterator, 6=Decorator");
+                Console.WriteLine("1 = Strategy, 2=Null Object, 3= Singleton, 4=Observer, 5=Iterator, 6=Decorator, 7=Facade");
                 Console.WriteLine("");
                 Console.WriteLine("type 'exit' and hit enter to stop");
                 Console.WriteLine("-------------------------------------------------------------------------------");
@@ -51,6 +53,9 @@ namespace DesignPattern
                         break;
                     case "6":
                         CallDecoratorPattern();
+                        break;
+                    case "7":
+                        CallFacadePattern();
                         break;
                     default:
                         break;
@@ -291,6 +296,23 @@ namespace DesignPattern
 
         }
         #endregion
+
+        #region Facade Pattern
+        public static void CallFacadePattern()
+        {
+            Dough dough = new Dough();
+            Sauce sauce = new Sauce("Marinara");
+            Cheese cheese = new Cheese("Pollyo");
+            PizzaTopping pizzaTopping = new PizzaTopping("Green Pepper");          
+            
+            PizzaFacade pf = new PizzaFacade(dough, cheese, sauce, pizzaTopping);
+            pf.MakePizza();
+            Console.WriteLine("Pizza Made");
+
+        }
+        #endregion
+
+
 
     }                                                
 }

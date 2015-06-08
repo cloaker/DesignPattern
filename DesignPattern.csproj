@@ -52,6 +52,12 @@
     <Compile Include="Decorator\ConcreteDecorator\WaffleCone.cs" />
     <Compile Include="Decorator\ConcreteDecorator\WhipCream.cs" />
     <Compile Include="Decorator\Decorator\Topping.cs" />
+    <Compile Include="Facade\Concrete\Cheese.cs" />
+    <Compile Include="Facade\Concrete\Oven.cs" />
+    <Compile Include="Facade\Concrete\PizzaTopping.cs" />
+    <Compile Include="Facade\Concrete\Sauce.cs" />
+    <Compile Include="Facade\Concrete\Dough.cs" />
+    <Compile Include="Facade\Facade\PizzaFacade.cs" />
     <Compile Include="Iterator\Aggregate\Facebook.cs" />
     <Compile Include="Iterator\Aggregate\ISocialNetworking.cs" />
     <Compile Include="Iterator\Aggregate\Twitter.cs" />
